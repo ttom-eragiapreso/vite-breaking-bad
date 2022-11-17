@@ -7,7 +7,7 @@ export default {
 
 <template>
   
-  <h1 class="text-primary">Titolo</h1>
+  <h1 class="text-primary text-center py-5">Titolo</h1>
 
 </template>
 

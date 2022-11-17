@@ -7,7 +7,10 @@ export default {
 
 <template>
   
-  <input type="text">
+  <select name="category" id="category" class="py-2 mb-4">
+    <option value="Breaking Bad">Breaking Bad</option>
+    <option value="Better Call Saul">Better Call Saul</option>
+  </select>
 
 </template>
 

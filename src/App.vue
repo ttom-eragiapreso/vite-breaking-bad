@@ -5,6 +5,7 @@ import CardComponentVue from './components/CardComponent.vue';
 import SearchComponentVue from './components/SearchComponent.vue';
 import CardContainerVue from './components/CardContainer.vue';
 import axios from 'axios';
+import {store} from '../src/data/store'
 export default {
   name: 'App',
   components: {
@@ -15,7 +16,8 @@ export default {
   },
   data(){
     return {
-      apiUrl: 'https://www.breakingbadapi.com/api/characters'
+      apiUrl: 'https://www.breakingbadapi.com/api/characters',
+      store
     }
   },
 
@@ -23,7 +25,8 @@ export default {
     callApi(url){
       axios.get(url)
       .then( response => {
-        console.log(response.data)
+         store.apiResponse = response.data
+         store.searchLength = response.data.length
       })
       .catch( error => {
         console.log(error)
