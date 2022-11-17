@@ -1,13 +1,16 @@
 
 <script>
 export default {
-  name: 'TitleComponent'
+  name: 'TitleComponent',
+  props: {
+    title: String
+  }
 }
 </script>
 
 <template>
   
-  <h1 class="text-primary text-center py-5">Titolo</h1>
+  <h1 class="text-center py-5">{{title}}</h1>
 
 </template>
 

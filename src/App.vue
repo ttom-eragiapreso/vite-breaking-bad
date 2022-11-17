@@ -41,8 +41,9 @@ export default {
 </script>
 
 <template>
+
   <div class="container">
-    <TitleComponentVue/>
+    <TitleComponentVue title="Breaking Bad API"/>
     <SearchComponentVue/>
     <CardContainerVue/>
   </div>
@@ -52,5 +53,9 @@ export default {
 <style lang="scss">
 @use './styles/general.scss' as *;
 
+body {
+  background-color: #2e3a46;
+  color: white;
+}
 
 </style>

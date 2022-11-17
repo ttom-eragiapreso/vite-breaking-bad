@@ -19,9 +19,19 @@ export default {
   
 <div class="search-length d-flex align-items-center px-3 fs-3">Risultati trovati: {{store.searchLength}}</div>
 
-<div class="container">Card Container
+<div class="container p-3">
 
-<CardComponentVue/>
+
+  <div class="row row-cols-5">
+    <CardComponentVue
+    v-for="(character, index) in store.apiResponse"
+    :key="index"
+    :img="character.img"
+    :name="character.name"
+    :category="character.category"
+    :status="character.status"
+    />
+  </div>
 
 </div>
 
