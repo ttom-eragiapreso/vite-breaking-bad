@@ -28,8 +28,8 @@ export default {
          store.apiResponse = response.data
          store.searchLength = response.data.length
       })
-      .catch( error => {
-        console.log(error)
+      .catch( () => {
+        console.log("Errore")
       })
     }
   },
@@ -42,19 +42,18 @@ export default {
 
 <template>
 
-  <div class="container">
     <TitleComponentVue title="Breaking Bad API"/>
     <SearchComponentVue/>
     <CardContainerVue/>
-  </div>
 
 </template>
 
 <style lang="scss">
 @use './styles/general.scss' as *;
+@use './styles/partials/variables' as *;
 
 body {
-  background-color: #2e3a46;
+  background-color: $primary-bg-color;
   color: white;
 }
 

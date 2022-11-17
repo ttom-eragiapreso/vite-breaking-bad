@@ -13,14 +13,16 @@ export default {
 
 <template>
   
-<div class="em-card col">
+<div class="em-card col"
+v-if="name != undefined"
+>
 
-  <div class="img-container">
+  <div class="img-container w-100">
     <img :src="img" :alt="name">
   </div>
-  <h2>{{name}}</h2>
-  <h2>{{category}}</h2>
-  <h2>{{status}}</h2>
+  <h2 class="text-center">{{name}}</h2>
+  <h2 class="text-center text-muted fs-4">{{category}}</h2>
+  <h2 class="text-center text-muted fs-4">{{status}}</h2>
 
 </div>
 
@@ -30,6 +32,9 @@ export default {
 @use '../styles/partials/mixin' as *;
 @use '../styles/partials/variables' as *;
 
-
+.em-card {
+  background-color: $primary-bg-color;
+  padding: 5px 25px;
+}
 
 </style>

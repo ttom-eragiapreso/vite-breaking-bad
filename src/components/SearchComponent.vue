@@ -7,11 +7,14 @@ export default {
 
 <template>
   
-  <select name="category" id="category" class="py-2 mb-4">
+  <div class="container">
+    <select name="category" id="category" class="py-2 mb-4">
     <option value="Breaking Bad">Breaking Bad</option>
     <option value="Better Call Saul">Better Call Saul</option>
   </select>
 
+  </div>
+  
 </template>
 
 <style lang="scss" scoped>

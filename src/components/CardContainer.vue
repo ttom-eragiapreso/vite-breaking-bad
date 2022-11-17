@@ -17,15 +17,16 @@ export default {
 
 <template>
   
-<div class="search-length d-flex align-items-center px-3 fs-3">Risultati trovati: {{store.searchLength}}</div>
-
-<div class="container p-3">
 
 
-  <div class="row row-cols-5">
+<div class="em-container p-3 bg-light">
+  <div class="search-length d-flex align-items-center p-3 fs-3 mb-4">Risultati trovati: {{store.searchLength}}</div>
+  <div class="container-fluid">
+
+    <div class="row row-cols-6 gap-3 d-flex justify-content-center">
     <CardComponentVue
-    v-for="(character, index) in store.apiResponse"
-    :key="index"
+    v-for="character in store.apiResponse"
+    :key="character.char_id"
     :img="character.img"
     :name="character.name"
     :category="character.category"
@@ -33,6 +34,8 @@ export default {
     />
   </div>
 
+  </div>
+  
 </div>
 
 </template>
@@ -41,6 +44,10 @@ export default {
 @use '../styles/partials/mixin' as *;
 @use '../styles/partials/variables' as *;
 
+.em-container {
+  width: 85%;
+  margin: 0 auto;
+}
 
 .search-length {
   background-color: #21252a;
