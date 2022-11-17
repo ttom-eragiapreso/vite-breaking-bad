@@ -18,7 +18,7 @@ v-if="name != undefined"
 >
 
   <div class="img-container w-100">
-    <img :src="img" :alt="name">
+    <img :src="img" :alt="name" onerror="this.src='http://s3.amazonaws.com/37assets/svn/765-default-avatar.png'">
   </div>
   <h2 class="text-center">{{name}}</h2>
   <h2 class="text-center text-muted fs-4">{{category}}</h2>
