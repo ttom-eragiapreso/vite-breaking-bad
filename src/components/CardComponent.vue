@@ -34,7 +34,11 @@ v-if="name != undefined"
 
 .em-card {
   background-color: $primary-bg-color;
-  padding: 5px 25px;
+  padding: 12px;
+}
+
+.img-container {
+  padding: 10px;
 }
 
 </style>
