@@ -1,18 +1,33 @@
 
 <script>
+import {store} from '../data/store'
 export default {
-  name: 'SearchComponent'
+  name: 'SearchComponent',
+  data(){
+    return{
+      store
+    }
+  }
 }
 </script>
 
 <template>
   
   <div class="container">
-    <select name="category" id="category" class="py-2 mb-4">
-    <option value="Breaking Bad">Breaking Bad</option>
-    <option value="Better Call Saul">Better Call Saul</option>
-  </select>
+    <div class="row">
 
+      <select v-model="store.searchCategory"
+      @change="$emit('newSearch')"
+      name="category" 
+      id="category" 
+      class="p-3 mb-4 col-auto">
+        <option value="">Select Category</option>
+        <option value="Breaking Bad">Breaking Bad</option>
+        <option value="Better Call Saul">Better Call Saul</option>
+      </select>
+
+    </div>
+  
   </div>
   
 </template>

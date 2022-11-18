@@ -16,7 +16,6 @@ export default {
   },
   data(){
     return {
-      apiUrl: 'https://www.breakingbadapi.com/api/characters',
       store
     }
   },
@@ -24,7 +23,11 @@ export default {
   methods: {
     callApi(url){
       store.isLoaded = false
-      axios.get(url)
+      axios.get(url, {
+        params: {
+          category: store.searchCategory,
+        }
+      })
       .then( response => {
          store.apiResponse = response.data
          store.searchLength = response.data.length
@@ -33,26 +36,28 @@ export default {
       .catch( () => {
         console.log("Errore")
       })
+    },
+
+    provaSaluto(){
+      console.log("ciao")
     }
   },
 
   mounted(){
-    this.callApi(this.apiUrl)
+    this.callApi(store.apiUrl)
   }
 }
 </script>
 
 <template>
 
-    <div class="loader" v-if="!store.isLoaded">Loading...</div>
+  <div class="loader" v-if="!store.isLoaded">Loading...</div>
 
-      <div v-else>
-            <TitleComponentVue title="Breaking Bad API"/>
-      <SearchComponentVue/>
-      <CardContainerVue/>
-      </div>
-  
-  
+  <div v-else>
+    <TitleComponentVue title="Breaking Bad API"/>
+    <SearchComponentVue @newSearch="callApi(store.apiUrl)"/>
+    <CardContainerVue/>
+  </div>
 
 </template>
 

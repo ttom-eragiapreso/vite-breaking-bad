@@ -11,6 +11,11 @@ export default {
     return {
       store
     }
+  },
+  computed: {
+    itemsFound(){
+      return store.searchLength === 0 ? 'Nessun risultato trovato' : store.searchLength
+    }
   }
 }
 </script>
@@ -20,7 +25,7 @@ export default {
 
 
 <div class="em-container p-3 bg-light">
-  <div class="search-length d-flex align-items-center p-3 fs-3 mb-4">Risultati trovati: {{store.searchLength}}</div>
+  <div class="search-length d-flex align-items-center p-3 fs-3 mb-4">Risultati trovati: {{itemsFound}}</div>
   <div class="container-fluid">
 
     <div class="row row-cols-6 gap-3 d-flex justify-content-center">
